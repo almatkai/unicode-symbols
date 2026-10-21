@@ -3,8 +3,9 @@
   "name": "unicode-symbols",
   "title": "Unicode Symbols Search",
   "description": "Browse and copy-paste common Unicode symbols.",
-  "icon": "command-icon.png",
+  "icon": "assets/command-icon.png",
   "author": "almatkai",
+  "categories": ["Developer Tools"],
   "contributors": [
     "FezVrasta",
     "pernielsentikaer",
