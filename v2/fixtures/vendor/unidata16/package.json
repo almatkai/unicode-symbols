@@ -1,0 +1,37 @@
+{
+  "name": "unidata16",
+  "version": "1.1.0",
+  "description": "This library provides a collection of Unicode data for various characters.",
+  "keywords": [
+    "unicode",
+    "data",
+    "characters"
+  ],
+  "author": {
+    "name": "Jelte Lagendijk",
+    "email": "jwlagendijk@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j3lte/unidata.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/j3lte/unidata/issues"
+  },
+  "main": "./script/mod.js",
+  "module": "./esm/mod.js",
+  "exports": {
+    ".": {
+      "import": "./esm/mod.js",
+      "require": "./script/mod.js"
+    }
+  },
+  "scripts": {
+    "test": "node test_runner.js"
+  },
+  "devDependencies": {
+    "picocolors": "^1.0.0"
+  },
+  "_generatedBy": "dnt@dev"
+}

@@ -1,0 +1,196 @@
+--- a/src-tauri/src/native_core/extensions/mod.rs
++++ b/src-tauri/src/native_core/extensions/mod.rs
+@@ -14,6 +14,8 @@
+ mod v2_port_manager;
+ mod v2_runtime;
+ mod v2_sdk;
++#[path = "../../../native-extensions/unicode-symbols/adapter/mod.rs"]
++mod v2_unicode_symbols;
+ mod v2_speedtest;
+ mod v2_timers;
+ 
+--- a/src-tauri/src/native_core/extensions/v2_runtime.rs
++++ b/src-tauri/src/native_core/extensions/v2_runtime.rs
+@@ -10,7 +10,7 @@
+     match value {
+         "amphetamine" | "audio-device" | "cleanshotx" | "color-picker" | "gif-search"
+         | "google-calendar" | "google-search" | "port-manager" | "speedtest" | "timers"
+-        | "perplexity" => Some(value),
++        | "perplexity" | "unicode-symbols" => Some(value),
+         _ => None,
+     }
+ }
+@@ -30,6 +30,7 @@
+         "speedtest" => super::v2_speedtest::commands(),
+         "timers" => super::v2_timers::commands(),
+         "perplexity" => super::v2_perplexity::commands(),
++        "unicode-symbols" => super::v2_unicode_symbols::commands(),
+         _ => &[],
+     }
+ }
+@@ -68,6 +69,7 @@
+         "speedtest" => super::v2_speedtest::handle(ctx, command, operation, payload, state).await,
+         "timers" => super::v2_timers::handle(ctx, command, operation, payload, state).await,
+         "perplexity" => super::v2_perplexity::handle(ctx, command, operation, payload, state).await,
++        "unicode-symbols" => super::v2_unicode_symbols::handle(ctx, command, operation, payload, state).await,
+         _ => Err(format!("No native adapter for {slug}")),
+     }
+ }
+--- a/src-tauri/src/native_core/extensions/v2_catalog.json
++++ b/src-tauri/src/native_core/extensions/v2_catalog.json
+@@ -2589,5 +2589,133 @@
+         "state": "not-run"
+       }
+     ]
++  },
++  {
++    "schemaVersion": 2,
++    "id": "com.tezbar.native.unicode-symbols",
++    "slug": "unicode-symbols",
++    "name": "Unicode Symbols Search",
++    "version": "0.1.0",
++    "description": "Browse and copy-paste common Unicode symbols. Originally by mmazzarolo; native port of almatkai/unicode-symbols. Contributors: FezVrasta, pernielsentikaer, j3lte, xilopaint, xmok, muhammadrizo.",
++    "runtime": "rust",
++    "replaces": [
++      "raycast.unicode-symbols"
++    ],
++    "platforms": [
++      "macOS",
++      "Windows"
++    ],
++    "icon": "/extensions/icons/unicode-symbols.png",
++    "preferences": [
++      {
++        "name": "searchResultLimitStr",
++        "title": "Search results limit",
++        "description": "Maximum number of items shown in the list. The lower the number of shown items is, the faster they'll be retrieved. Defaults to 100. Supports up to 1000 items.",
++        "type": "textfield",
++        "default": "100",
++        "required": false
++      },
++      {
++        "name": "viewType",
++        "title": "View Type",
++        "description": "Type of view to use to display the results.",
++        "type": "dropdown",
++        "data": [
++          {
++            "title": "List",
++            "value": "list"
++          },
++          {
++            "title": "Grid",
++            "value": "grid"
++          }
++        ],
++        "default": "grid",
++        "required": false
++      },
++      {
++        "name": "gridItemSize",
++        "type": "dropdown",
++        "required": false,
++        "title": "Grid Item Size",
++        "description": "Control the size of individual grid cells in the grid view.",
++        "default": "medium",
++        "data": [
++          {
++            "title": "Small",
++            "value": "small"
++          },
++          {
++            "title": "Medium",
++            "value": "medium"
++          },
++          {
++            "title": "Large",
++            "value": "large"
++          }
++        ]
++      },
++      {
++        "name": "dataSet",
++        "type": "dropdown",
++        "required": false,
++        "title": "Data Set",
++        "description": "The data set to use for the search. By default it uses the minimal data set, which contains about 5400 characters. The full set contains +40000 characters. Using this big of a dataset might impact performance. Note: In 'List View' only the minimal dataset is supported.",
++        "default": "minimal",
++        "data": [
++          {
++            "title": "Minimal",
++            "value": "minimal"
++          },
++          {
++            "title": "Full",
++            "value": "full"
++          }
++        ]
++      },
++      {
++        "name": "primaryAction",
++        "type": "dropdown",
++        "required": false,
++        "title": "Primary Action",
++        "description": "The action to perform when selecting an item.",
++        "default": "paste",
++        "data": [
++          {
++            "title": "Paste Character to Active App",
++            "value": "paste"
++          },
++          {
++            "title": "Copy Character to Clipboard",
++            "value": "copy"
++          }
++        ]
++      }
++    ],
++    "commands": [
++      {
++        "name": "index",
++        "title": "Search Unicode Symbol",
++        "description": "Browse and copy-paste common Unicode symbols.",
++        "mode": "view",
++        "platforms": [
++          "macOS",
++          "Windows"
++        ],
++        "runtime": "rust"
++      }
++    ],
++    "verification": [
++      {
++        "platform": "macOS",
++        "state": "not-run",
++        "note": "Compiled fixture checks only; integrated desktop QA has not run."
++      },
++      {
++        "platform": "Windows",
++        "state": "not-run",
++        "note": "Compiled fixture checks only; integrated desktop QA has not run."
++      }
++    ]
+   }
+ ]
+--- a/src-tauri/src/native_core/extensions/v2_catalog.rs
++++ b/src-tauri/src/native_core/extensions/v2_catalog.rs
+@@ -169,7 +169,7 @@
+     #[test]
+     fn bundled_ids_and_coverage_are_consistent() {
+         let items = manifests();
+-        assert_eq!(items.len(), 11);
++        assert_eq!(items.len(), 12);
+         for item in items {
+             let slug = item["slug"].as_str().unwrap();
+             assert_eq!(item["id"], v2_runtime::canonical_id(slug));
+--- a/docs/NATIVE_V2_FORMAT.md
++++ b/docs/NATIVE_V2_FORMAT.md
+@@ -2,7 +2,7 @@
+ 
+ Native V2 is manifest schema version 2, not an application version. A bundled extension has a canonical `com.tezbar.native.<slug>` ID and lists the `raycast.<slug>` ID it replaces. The Rust binary contains the adapter dispatch; JSON cannot add executable code.
+ 
+-`src-tauri/src/native_core/extensions/v2_catalog.json` contains public package metadata and command names from the eleven installed extension sources. It contains no saved preferences, storage, credentials, or user data. `schemas/extension-v2.schema.json` defines the format. At runtime, `v2_catalog` compares each command with compiled dispatch and the declared platform. It reports `rust` only for a compiled handler on that platform; otherwise it reports `unavailable` with a gap. Status is derived from those commands. Verification is separate and starts `not-run` on both platforms until a real QA artifact records the outcome.
++`src-tauri/src/native_core/extensions/v2_catalog.json` contains public package metadata and command names from the twelve extension sources (including the compiled-in Unicode Symbols Search port). The catalog declares 85 command entries after this addition (previously 84); compiled dispatch still determines actual platform coverage. It contains no saved preferences, storage, credentials, or user data. `schemas/extension-v2.schema.json` defines the format. At runtime, `v2_catalog` compares each command with compiled dispatch and the declared platform. It reports `rust` only for a compiled handler on that platform; otherwise it reports `unavailable` with a gap. Status is derived from those commands. Verification is separate and starts `not-run` on both platforms until a real QA artifact records the outcome.
+ 
+ The store also retains 98 own V1 catalog entries covering 247 commands. These are JavaScript compatibility extensions; they are not included in Native V2 coverage. Seven entries come from local public package manifests and use their declared `com.tezbar.*` IDs, including `com.tezbar.google-translate` whose package name is `translate` and `com.tezbar.visual-studio-code`. A partial Native V2 replacement appears before its V1 counterpart so remaining V1 commands can still be found.
+ 
