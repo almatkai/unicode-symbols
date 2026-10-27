@@ -10,3 +10,5 @@ By default the Data Set is set to "Minimal" which includes common symbols and on
 If you cannot find the symbol you are looking for, please set this configuration to "Full" and try again. This set is +40000 symbols big and might impact performance.
 
 > Please note that if you are using the "List view" instead of "Grid", only the "Minimal" dataset is supported due to technical reasons.
+
+Native V2 compiled-in Rust port: [v2/README.md](v2/README.md).

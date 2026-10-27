@@ -1,0 +1,5 @@
+target/
+.work/
+fixtures/own/node_modules/
+!fixtures/vendor/**/dist/
+!fixtures/vendor/**/dist/**

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "id": "com.tezbar.native.unicode-symbols",
+  "slug": "unicode-symbols",
+  "name": "Unicode Symbols Search",
+  "version": "0.1.0",
+  "description": "Browse and copy-paste common Unicode symbols. Originally by mmazzarolo; native port of almatkai/unicode-symbols. Contributors: FezVrasta, pernielsentikaer, j3lte, xilopaint, xmok, muhammadrizo.",
+  "runtime": "rust",
+  "replaces": [
+    "raycast.unicode-symbols"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "icon": "/extensions/icons/unicode-symbols.png",
+  "preferences": [
+    {
+      "name": "searchResultLimitStr",
+      "title": "Search results limit",
+      "description": "Maximum number of items shown in the list. The lower the number of shown items is, the faster they'll be retrieved. Defaults to 100. Supports up to 1000 items.",
+      "type": "textfield",
+      "default": "100",
+      "required": false
+    },
+    {
+      "name": "viewType",
+      "title": "View Type",
+      "description": "Type of view to use to display the results.",
+      "type": "dropdown",
+      "data": [
+        {
+          "title": "List",
+          "value": "list"
+        },
+        {
+          "title": "Grid",
+          "value": "grid"
+        }
+      ],
+      "default": "grid",
+      "required": false
+    },
+    {
+      "name": "gridItemSize",
+      "type": "dropdown",
+      "required": false,
+      "title": "Grid Item Size",
+      "description": "Control the size of individual grid cells in the grid view.",
+      "default": "medium",
+      "data": [
+        {
+          "title": "Small",
+          "value": "small"
+        },
+        {
+          "title": "Medium",
+          "value": "medium"
+        },
+        {
+          "title": "Large",
+          "value": "large"
+        }
+      ]
+    },
+    {
+      "name": "dataSet",
+      "type": "dropdown",
+      "required": false,
+      "title": "Data Set",
+      "description": "The data set to use for the search. By default it uses the minimal data set, which contains about 5400 characters. The full set contains +40000 characters. Using this big of a dataset might impact performance. Note: In 'List View' only the minimal dataset is supported.",
+      "default": "minimal",
+      "data": [
+        {
+          "title": "Minimal",
+          "value": "minimal"
+        },
+        {
+          "title": "Full",
+          "value": "full"
+        }
+      ]
+    },
+    {
+      "name": "primaryAction",
+      "type": "dropdown",
+      "required": false,
+      "title": "Primary Action",
+      "description": "The action to perform when selecting an item.",
+      "default": "paste",
+      "data": [
+        {
+          "title": "Paste Character to Active App",
+          "value": "paste"
+        },
+        {
+          "title": "Copy Character to Clipboard",
+          "value": "copy"
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "name": "index",
+      "title": "Search Unicode Symbol",
+      "description": "Browse and copy-paste common Unicode symbols.",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust"
+    }
+  ],
+  "verification": [
+    {
+      "platform": "macOS",
+      "state": "not-run",
+      "note": "Compiled fixture checks only; integrated desktop QA has not run."
+    },
+    {
+      "platform": "Windows",
+      "state": "not-run",
+      "note": "Compiled fixture checks only; integrated desktop QA has not run."
+    }
+  ]
+}

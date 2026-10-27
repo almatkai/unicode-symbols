@@ -1,0 +1,19 @@
+[package]
+name = "tezbar-unicode-symbols"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT AND Apache-2.0 AND Unicode-3.0 AND Unicode-DFS-2016 AND BSD-3-Clause AND CC-BY-4.0"
+description = "Compiled-in Tezbar Native V2 Unicode Symbols Search core and beta adapter"
+repository = "https://github.com/almatkai/unicode-symbols"
+include = ["/src/**", "/adapter/**", "/examples/**", "/tests/**", "/tools/**", "/fixtures/own/src/**", "/fixtures/own/assets/**", "/fixtures/own/scripts/**", "/fixtures/own/test/**", "/fixtures/own/package.json", "/fixtures/own/package-lock.json", "/fixtures/own/tsconfig.json", "/fixtures/own/raycast-env.d.ts", "/fixtures/own/LICENSE", "/fixtures/own/README.md", "/fixtures/own/eslint.config.js", "/fixtures/beta/**", "/fixtures/vendor/**", "/fixtures/upstream/**", "/fixtures/derived/**", "/icons/**", "/licenses/**", "/README.md", "/INTEGRATION.md", "/VALIDATION.md", "/NOTICES.md", "/PROVENANCE.json", "/extension-v2.json", "/integration.patch", "/Cargo.toml", "/Cargo.lock", "/.gitignore"]
+
+[dependencies]
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = { version = "=1.0.145", features = ["raw_value"] }
+base64 = "=0.22.1"
+
+[dev-dependencies]
+tokio = { version = "=1.48.0", features = ["macros", "rt-multi-thread", "sync", "time", "fs"] }
+tempfile = "=3.14.0"
+log = "=0.4.28"

@@ -1,0 +1,1257 @@
+{
+  "actionFixtures": [
+    {
+      "code": 9,
+      "formatting": {
+        "0": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+CTwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+CTwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "hex": "0009"
+        },
+        "1": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj4JPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj4JPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "hex": "0009"
+        }
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "title": "Copy Character to Clipboard",
+          "content": "\t",
+          "shortcut": {
+            "key": "c"
+          }
+        },
+        {
+          "type": "paste",
+          "title": "Paste Character to Active App",
+          "content": "\t",
+          "icon": "Clipboard",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "v"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "v"
+            }
+          }
+        },
+        {
+          "type": "snippet",
+          "snippet": {
+            "text": "\t",
+            "name": "Character Tabulation"
+          },
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "s"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "s"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"0009\" (HEX) to Clipboard",
+          "content": "0009",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"\\u0009\" (Unicode Escape) to Clipboard",
+          "content": "\\u0009",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "u"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "u"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&Tab;\" (HTML Entity) to Clipboard",
+          "content": "&Tab;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&#9;\" (HTML Decimal) to Clipboard",
+          "content": "&#9;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "t"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "t"
+            }
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Compart",
+          "url": "https://www.compart.com/en/unicode/U+0009",
+          "shortcut": {
+            "key": "o"
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Unicode Explorer",
+          "url": "https://unicode-explorer.com/c/0009",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "o"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "o"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": 38,
+      "formatting": {
+        "0": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+JmFtcDs8L3RleHQ+CiAgPC9zdmc+CiAg",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+JmFtcDs8L3RleHQ+CiAgPC9zdmc+CiAg",
+          "hex": "0026"
+        },
+        "1": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj4mYW1wOzwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj4mYW1wOzwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "hex": "0026"
+        }
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "title": "Copy Character to Clipboard",
+          "content": "&",
+          "shortcut": {
+            "key": "c"
+          }
+        },
+        {
+          "type": "paste",
+          "title": "Paste Character to Active App",
+          "content": "&",
+          "icon": "Clipboard",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "v"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "v"
+            }
+          }
+        },
+        {
+          "type": "snippet",
+          "snippet": {
+            "text": "&",
+            "name": "Ampersand"
+          },
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "s"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "s"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"0026\" (HEX) to Clipboard",
+          "content": "0026",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"\\u0026\" (Unicode Escape) to Clipboard",
+          "content": "\\u0026",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "u"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "u"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&amp;\" (HTML Entity) to Clipboard",
+          "content": "&amp;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&#38;\" (HTML Decimal) to Clipboard",
+          "content": "&#38;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "t"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "t"
+            }
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Compart",
+          "url": "https://www.compart.com/en/unicode/U+0026",
+          "shortcut": {
+            "key": "o"
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Unicode Explorer",
+          "url": "https://unicode-explorer.com/c/0026",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "o"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "o"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": 65,
+      "formatting": {
+        "0": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+QTwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+QTwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "hex": "0041"
+        },
+        "1": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj5BPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj5BPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "hex": "0041"
+        }
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "title": "Copy Character to Clipboard",
+          "content": "A",
+          "shortcut": {
+            "key": "c"
+          }
+        },
+        {
+          "type": "paste",
+          "title": "Paste Character to Active App",
+          "content": "A",
+          "icon": "Clipboard",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "v"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "v"
+            }
+          }
+        },
+        {
+          "type": "snippet",
+          "snippet": {
+            "text": "A",
+            "name": "Latin Capital Letter A"
+          },
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "s"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "s"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"0041\" (HEX) to Clipboard",
+          "content": "0041",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"\\u0041\" (Unicode Escape) to Clipboard",
+          "content": "\\u0041",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "u"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "u"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&#65;\" (HTML Decimal) to Clipboard",
+          "content": "&#65;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Compart",
+          "url": "https://www.compart.com/en/unicode/U+0041",
+          "shortcut": {
+            "key": "o"
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Unicode Explorer",
+          "url": "https://unicode-explorer.com/c/0041",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "o"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "o"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": 178,
+      "formatting": {
+        "0": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+wrI8L3RleHQ+CiAgPC9zdmc+CiAg",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+wrI8L3RleHQ+CiAgPC9zdmc+CiAg",
+          "hex": "00B2"
+        },
+        "1": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj7CsjwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj7CsjwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "hex": "00B2"
+        }
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "title": "Copy Character to Clipboard",
+          "content": "²",
+          "shortcut": {
+            "key": "c"
+          }
+        },
+        {
+          "type": "paste",
+          "title": "Paste Character to Active App",
+          "content": "²",
+          "icon": "Clipboard",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "v"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "v"
+            }
+          }
+        },
+        {
+          "type": "snippet",
+          "snippet": {
+            "text": "²",
+            "name": "Superscript Two"
+          },
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "s"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "s"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"00B2\" (HEX) to Clipboard",
+          "content": "00B2",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"\\u00B2\" (Unicode Escape) to Clipboard",
+          "content": "\\u00B2",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "u"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "u"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&sup2;\" (HTML Entity) to Clipboard",
+          "content": "&sup2;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&#178;\" (HTML Decimal) to Clipboard",
+          "content": "&#178;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "t"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "t"
+            }
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Compart",
+          "url": "https://www.compart.com/en/unicode/U+00B2",
+          "shortcut": {
+            "key": "o"
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Unicode Explorer",
+          "url": "https://unicode-explorer.com/c/00B2",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "o"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "o"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": 8984,
+      "formatting": {
+        "0": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+4oyYPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+4oyYPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "hex": "2318"
+        },
+        "1": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj7ijJg8L3RleHQ+CiAgPC9zdmc+CiAg",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj7ijJg8L3RleHQ+CiAgPC9zdmc+CiAg",
+          "hex": "2318"
+        }
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "title": "Copy Character to Clipboard",
+          "content": "⌘",
+          "shortcut": {
+            "key": "c"
+          }
+        },
+        {
+          "type": "paste",
+          "title": "Paste Character to Active App",
+          "content": "⌘",
+          "icon": "Clipboard",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "v"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "v"
+            }
+          }
+        },
+        {
+          "type": "snippet",
+          "snippet": {
+            "text": "⌘",
+            "name": "Place Of Interest Sign"
+          },
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "s"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "s"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"2318\" (HEX) to Clipboard",
+          "content": "2318",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"\\u2318\" (Unicode Escape) to Clipboard",
+          "content": "\\u2318",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "u"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "u"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&#8984;\" (HTML Decimal) to Clipboard",
+          "content": "&#8984;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Compart",
+          "url": "https://www.compart.com/en/unicode/U+2318",
+          "shortcut": {
+            "key": "o"
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Unicode Explorer",
+          "url": "https://unicode-explorer.com/c/2318",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "o"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "o"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": 128512,
+      "formatting": {
+        "0": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+8J+YgDwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+8J+YgDwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "hex": "1F600"
+        },
+        "1": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj7wn5iAPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj7wn5iAPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "hex": "1F600"
+        }
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "title": "Copy Character to Clipboard",
+          "content": "😀",
+          "shortcut": {
+            "key": "c"
+          }
+        },
+        {
+          "type": "paste",
+          "title": "Paste Character to Active App",
+          "content": "😀",
+          "icon": "Clipboard",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "v"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "v"
+            }
+          }
+        },
+        {
+          "type": "snippet",
+          "snippet": {
+            "text": "😀",
+            "name": "Grinning Face"
+          },
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "s"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "s"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"1F600\" (HEX) to Clipboard",
+          "content": "1F600",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"\\u1F600\" (Unicode Escape) to Clipboard",
+          "content": "\\u1F600",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "u"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "u"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&#128512;\" (HTML Decimal) to Clipboard",
+          "content": "&#128512;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Compart",
+          "url": "https://www.compart.com/en/unicode/U+1F600",
+          "shortcut": {
+            "key": "o"
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Unicode Explorer",
+          "url": "https://unicode-explorer.com/c/1F600",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "o"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "o"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": 119808,
+      "formatting": {
+        "0": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+8J2QgDwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxNTMuODQ2MTUzODQ2MTUzODQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9uby1zcGFjZSI+8J2QgDwvdGV4dD4KICA8L3N2Zz4KICA=",
+          "hex": "1D400"
+        },
+        "1": {
+          "light": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiMwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj7wnZCAPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "dark": "data:image/svg+xml;base64,CiAgPHN2ZyBoZWlnaHQ9IjIwMCIgd2lkdGg9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IGZpbGw9InRyYW5zcGFyZW50IiB4PSIwIiB5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PC9yZWN0PgogICAgPHRleHQgeD0iMTAwIiB5PSIxMDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0iY2VudHJhbCIgZm9udC1zaXplPSIxMDAiIGxpbmUtaGVpZ2h0PSIwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIj7wnZCAPC90ZXh0PgogIDwvc3ZnPgogIA==",
+          "hex": "1D400"
+        }
+      },
+      "actions": [
+        {
+          "type": "copy",
+          "title": "Copy Character to Clipboard",
+          "content": "𝐀",
+          "shortcut": {
+            "key": "c"
+          }
+        },
+        {
+          "type": "paste",
+          "title": "Paste Character to Active App",
+          "content": "𝐀",
+          "icon": "Clipboard",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "v"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "v"
+            }
+          }
+        },
+        {
+          "type": "snippet",
+          "snippet": {
+            "text": "𝐀",
+            "name": "Mathematical Bold Capital A"
+          },
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "s"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "s"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"1D400\" (HEX) to Clipboard",
+          "content": "1D400",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"\\u1D400\" (Unicode Escape) to Clipboard",
+          "content": "\\u1D400",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd"
+              ],
+              "key": "u"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl"
+              ],
+              "key": "u"
+            }
+          }
+        },
+        {
+          "type": "copy",
+          "title": "Copy \"&#119808;\" (HTML Decimal) to Clipboard",
+          "content": "&#119808;",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "h"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "h"
+            }
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Compart",
+          "url": "https://www.compart.com/en/unicode/U+1D400",
+          "shortcut": {
+            "key": "o"
+          }
+        },
+        {
+          "type": "open",
+          "title": "Open Character on Unicode Explorer",
+          "url": "https://unicode-explorer.com/c/1D400",
+          "shortcut": {
+            "macOS": {
+              "modifiers": [
+                "cmd",
+                "shift"
+              ],
+              "key": "o"
+            },
+            "Windows": {
+              "modifiers": [
+                "ctrl",
+                "shift"
+              ],
+              "key": "o"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "effects": [
+    [
+      "addToRecentlyUsedItems",
+      9
+    ],
+    [
+      "addToRecentlyUsedItems",
+      9
+    ],
+    [
+      "addToRecentlyUsedItems",
+      9
+    ],
+    [
+      "addToRecentlyUsedItems",
+      9
+    ],
+    [
+      "addToRecentlyUsedItems",
+      38
+    ],
+    [
+      "addToRecentlyUsedItems",
+      38
+    ],
+    [
+      "addToRecentlyUsedItems",
+      38
+    ],
+    [
+      "addToRecentlyUsedItems",
+      38
+    ],
+    [
+      "addToRecentlyUsedItems",
+      65
+    ],
+    [
+      "addToRecentlyUsedItems",
+      65
+    ],
+    [
+      "addToRecentlyUsedItems",
+      65
+    ],
+    [
+      "addToRecentlyUsedItems",
+      178
+    ],
+    [
+      "addToRecentlyUsedItems",
+      178
+    ],
+    [
+      "addToRecentlyUsedItems",
+      178
+    ],
+    [
+      "addToRecentlyUsedItems",
+      178
+    ],
+    [
+      "addToRecentlyUsedItems",
+      8984
+    ],
+    [
+      "addToRecentlyUsedItems",
+      8984
+    ],
+    [
+      "addToRecentlyUsedItems",
+      8984
+    ],
+    [
+      "addToRecentlyUsedItems",
+      128512
+    ],
+    [
+      "addToRecentlyUsedItems",
+      128512
+    ],
+    [
+      "addToRecentlyUsedItems",
+      128512
+    ],
+    [
+      "addToRecentlyUsedItems",
+      119808
+    ],
+    [
+      "addToRecentlyUsedItems",
+      119808
+    ],
+    [
+      "addToRecentlyUsedItems",
+      119808
+    ]
+  ]
+}
