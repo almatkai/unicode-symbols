@@ -3,8 +3,8 @@
 The root package is schema 3, process protocol 1, version 0.1.0, canonical ID
 `com.tezbar.native.unicode-symbols`. The original `package.json` name is
 `unicode-symbols`, so its replacement is `raycast.unicode-symbols`.
-`gh release list --repo almatkai/unicode-symbols` returned no releases when selecting
-this first native package version. Nothing in this implementation publishes it.
+The [0.1.0 release](https://github.com/almatkai/unicode-symbols/releases/tag/v0.1.0)
+publishes both native platform packages and the trusted install reference.
 
 The production executable is `bin/tezbar-unicode-symbols` on macOS arm64 and
 `bin/tezbar-unicode-symbols.exe` on Windows x64. The root Cargo workspace imports
@@ -69,8 +69,8 @@ reset the page. This also covers original uncapped empty-query block filtering.
   Paste targets the active application rather than naming it in the title.
 - Real desktop QA remains **unverified on both platforms**. Headless protocol,
   schema and renderer tests do not prove actual clipboard, paste, browser or UI
-  behavior. Windows binary build/smoke is handed off to central coordination;
-  including Windows dependency notices does not establish Windows coverage.
+  behavior. Native macOS and Windows builds, extracted-package protocol/migration
+  checks and isolated Tezbar CLI installs passed; this is not desktop UI coverage.
 
 ## Saved data and preferences
 

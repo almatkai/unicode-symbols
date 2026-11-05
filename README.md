@@ -4,6 +4,16 @@ Browse and copy-paste [Unicode 17.0.0](https://www.unicode.org/versions/Unicode1
 
 ## Installable native Rust extension
 
+[Native Rust 0.1.0 release](https://github.com/almatkai/unicode-symbols/releases/tag/v0.1.0): [macOS Apple Silicon ZIP](https://github.com/almatkai/unicode-symbols/releases/download/v0.1.0/unicode-symbols-aarch64-apple-darwin.zip), [Windows x64 ZIP](https://github.com/almatkai/unicode-symbols/releases/download/v0.1.0/unicode-symbols-x86_64-pc-windows-msvc.zip), and [trusted install reference](https://github.com/almatkai/unicode-symbols/releases/download/v0.1.0/extension-release.json).
+
+Download the trusted JSON and your platform ZIP, then import them with:
+
+```sh
+tezbar --extensions-v3-import extension-release.json unicode-symbols-<target>.zip
+```
+
+Both native builds, extracted-package checks and Tezbar CLI imports into isolated profiles passed. [Validation and hashes](https://github.com/almatkai/unicode-symbols/releases/download/v0.1.0/validation.json) record the tested source. Real desktop clipboard, focus and rendering QA remains pending. Store discovery requires a Tezbar catalog update.
+
 The root [extension.json](extension.json) describes the standalone schema 3 process
 package, **com.tezbar.native.unicode-symbols**, replacing **raycast.unicode-symbols**.
 Its `index` / **Search Unicode Symbol** command uses the mature [v2 Rust engine](v2/README.md)
