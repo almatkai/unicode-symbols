@@ -2,6 +2,23 @@
 
 Browse and copy-paste [Unicode 17.0.0](https://www.unicode.org/versions/Unicode17.0.0/) symbols.
 
+## Installable native Rust extension
+
+The root [extension.json](extension.json) describes the standalone schema 3 process
+package, **com.tezbar.native.unicode-symbols**, replacing **raycast.unicode-symbols**.
+Its `index` / **Search Unicode Symbol** command uses the mature [v2 Rust engine](v2/README.md)
+with the original datasets, Fuse 6.6.2 search, preferences and command icon.
+The original Raycast TypeScript source and package manifest remain in this repository.
+
+The native package contains a Rust executable, resources and third-party notices;
+it requires no JavaScript/Bun process, Tezbar app crate, or beta fixture materialization.
+See [NATIVE.md](NATIVE.md) for builds, package verification, migration and install handoff.
+Real macOS/Windows desktop QA remains unverified. **Save as Snippet explicitly reports
+unsupported** because the process host has no snippet creation API. The six original
+unpaired UTF-16 records cannot be copied/pasted as characters over UTF-8; format copies
+and browser references remain usable. Large result sets use 150-row pages with
+Next/Previous Page actions, preserving search order and access to every result.
+
 ## Configuration
 
 ### Data Set

@@ -290,6 +290,11 @@ impl Session {
         id
     }
     pub fn render(&mut self, store: &Store) -> Value {
+        self.render_window(store, None)
+    }
+    /// Transport-bounded paging; search, ordering and stored metadata stay unchanged.
+    /// The original compiled-in adapter keeps the unwindowed renderer above.
+    pub fn render_window(&mut self, store: &Store, window: Option<(usize, usize)>) -> Value {
         self.bindings.clear();
         let mut actions = Vec::new();
         if let Some(code) = self.snippet {
@@ -343,6 +348,41 @@ impl Session {
                     }
                 }
             }
+        }
+        let total: usize = list.iter().map(|s| s.items.len()).sum();
+        let (page, size) = window
+            .map(|(page, size)| (page.min(total.saturating_sub(1) / size.max(1)), size.max(1)))
+            .unwrap_or((0, total.max(1)));
+        let mut skip = page * size;
+        let mut remaining = size;
+        if window.is_some() {
+            for section in &mut list {
+                let before = section.items.len();
+                let start = skip.min(before);
+                skip = skip.saturating_sub(before);
+                let end = (start + remaining).min(before);
+                remaining -= end - start;
+                section.items = section.items[start..end].to_vec();
+            }
+        }
+        let mut page_actions = Vec::new();
+        if window.is_some() && page > 0 {
+            page_actions.push(self.action(
+                &mut actions,
+                "Previous Page".into(),
+                "process-previous-page",
+                None,
+                None,
+            ));
+        }
+        if window.is_some() && (page + 1) * size < total {
+            page_actions.push(self.action(
+                &mut actions,
+                "Next Page".into(),
+                "process-next-page",
+                None,
+                None,
+            ));
         }
         let filter = self.action(
             &mut actions,
@@ -490,6 +530,7 @@ impl Session {
                 for id in &ids {
                     self.bindings.get_mut(id).unwrap().meta = ItemMeta { score, extra };
                 }
+                ids.extend(page_actions.iter().cloned());
                 let tooltip = tooltip(c, &section.title, self.filter.is_none(), extra);
                 if grid {
                     rows.push(node("Grid.Item",json!({"id":format!("{}:{code}",section.title),"title":upper_first(&c.n),"content":{"source":{"light":svg(&c.v,false),"dark":svg(&c.v,true)}},"accessory":{"tooltip":tooltip,"icon":{"source":if extra{"exclamation-outline.svg"}else{"Info"}}},"actionIds":ids}),vec![]));
@@ -509,7 +550,21 @@ impl Session {
             json!({"searchText":self.query,"filtering":false,"__hasServerSearch":true,"isLoading":false,"columns":self.prefs.columns,"searchBarAccessory":accessory}),
             children,
         );
-        json!({"ok":true,"mode":"view","title":"Search Unicode Symbol","root":root,"actions":actions})
+        {
+            let mut view = json!({"ok":true,"mode":"view","title":"Search Unicode Symbol","root":root,"actions":actions});
+            if window.is_some() {
+                view["_processPage"] = json!(page);
+                if total > size {
+                    view["message"] = json!(format!(
+                        "Characters {}–{} of {} · Use Next Page / Previous Page in the action menu",
+                        page * size + 1,
+                        ((page + 1) * size).min(total),
+                        total
+                    ));
+                }
+            }
+            view
+        }
     }
 }
 fn node(kind: &str, props: Value, children: Vec<Value>) -> Value {
