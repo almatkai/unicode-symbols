@@ -128,9 +128,17 @@
   "migrationPaths": {
     "nativeStore": "native-extensions-v2/unicode-symbols/storage.json",
     "legacyLocalStorage": "extensions/unicode-symbols/.tezbar-local-storage.json",
+    "legacyRaycastLocalStorage": "extensions/raycast.unicode-symbols/.tezbar-local-storage.json",
     "legacyPackageLocalStorage": "extensions/packages/raycast.unicode-symbols/.tezbar-local-storage.json",
+    "legacyRegistryLocalStorage": "extension-registry/packages/raycast.unicode-symbols/.tezbar-local-storage.json",
+    "legacyBarePackageLocalStorage": "extensions/packages/unicode-symbols/.tezbar-local-storage.json",
+    "legacyBareRegistryLocalStorage": "extension-registry/packages/unicode-symbols/.tezbar-local-storage.json",
     "legacyShimStorage": "extensions/unicode-symbols/localStorage.json",
-    "legacyPackageShimStorage": "extensions/packages/raycast.unicode-symbols/localStorage.json"
+    "legacyRaycastShimStorage": "extensions/raycast.unicode-symbols/localStorage.json",
+    "legacyPackageShimStorage": "extensions/packages/raycast.unicode-symbols/localStorage.json",
+    "legacyRegistryShimStorage": "extension-registry/packages/raycast.unicode-symbols/localStorage.json",
+    "legacyBarePackageShimStorage": "extensions/packages/unicode-symbols/localStorage.json",
+    "legacyBareRegistryShimStorage": "extension-registry/packages/unicode-symbols/localStorage.json"
   },
   "verification": [
     {

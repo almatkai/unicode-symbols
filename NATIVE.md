@@ -80,24 +80,62 @@ Only declared, host-granted migration files are read, never scanned profile root
 |---|---|
 | nativeStore | native-extensions-v2/unicode-symbols/storage.json |
 | legacyLocalStorage | extensions/unicode-symbols/.tezbar-local-storage.json |
+| legacyRaycastLocalStorage | extensions/raycast.unicode-symbols/.tezbar-local-storage.json |
 | legacyPackageLocalStorage | extensions/packages/raycast.unicode-symbols/.tezbar-local-storage.json |
+| legacyRegistryLocalStorage | extension-registry/packages/raycast.unicode-symbols/.tezbar-local-storage.json |
+| legacyBarePackageLocalStorage | extensions/packages/unicode-symbols/.tezbar-local-storage.json |
+| legacyBareRegistryLocalStorage | extension-registry/packages/unicode-symbols/.tezbar-local-storage.json |
 | legacyShimStorage | extensions/unicode-symbols/localStorage.json |
+| legacyRaycastShimStorage | extensions/raycast.unicode-symbols/localStorage.json |
 | legacyPackageShimStorage | extensions/packages/raycast.unicode-symbols/localStorage.json |
+| legacyRegistryShimStorage | extension-registry/packages/raycast.unicode-symbols/localStorage.json |
+| legacyBarePackageShimStorage | extensions/packages/unicode-symbols/localStorage.json |
+| legacyBareRegistryShimStorage | extension-registry/packages/unicode-symbols/localStorage.json |
+
+These are standard host-managed/discovered roots, including bare and `raycast.`
+package names. All 13 grants are individual files; there are no directory grants,
+home/profile scans, or direct Raycast-on-disk access. Arbitrary external development
+package paths remain outside these grants.
 
 The current JS view runner writes `.tezbar-local-storage.json`; the older no-view
 shim writes `localStorage.json`, both under the extension package root. Its values
 are JSON strings. The source uses `favorites-v1` and `recently-used-v2`, containing
 character objects with optional `score` / `isExtra`. Migration validates canonical
 codes, duplicates, limits and metadata, retaining source order and converting to
-v2 numeric identities/metadata. Source files remain untouched. Existing private
-lists win, then native v2, then declared JS files in table order. Each list and its
-metadata move together so a lower-priority file cannot introduce orphan metadata.
-Malformed sources abort without a completion marker or partial private import.
-An atomic `_processMigrationV1` marker makes import idempotent. Private storage is
-`<host-granted dataDir>/unicode-symbols/storage.json` via SDK atomic updates.
+v2 numeric identities/metadata, including raw unpaired UTF-16 records. Source files
+remain byte-for-byte untouched.
 
-Nonstandard JS development package locations are outside these narrow grants and
-cannot be auto-imported. No direct Raycast-on-disk storage access is claimed.
+Existing private lists (including deliberately empty arrays), metadata keys and
+unknown keys always win. For missing lists, native v2 wins, then **all** JS view
+files, then **all** older shim files, in table order within each family. The first
+four roots follow the actual JS resolver: `extensions/<slug>`,
+`extensions/raycast.<slug>`, `extensions/packages/raycast.<slug>`, then
+`extension-registry/packages/raycast.<slug>`. The two additional bare package roots
+follow, in managed-root order. The Rust registry also discovers these bare roots;
+its sorted discovery precedence differs from the JS resolver when duplicate
+installations coexist, so this package explicitly uses the JS order for migration.
+A lower-priority list cannot add orphan metadata. Metadata follows its imported
+list only if that metadata key is not already privately owned. Unknown legacy keys
+are not imported.
+
+The V2 recovery pass deliberately ignores `_processMigrationV1`: the first candidate
+wrote it even without a reachable source. `_processMigrationV2: true` means that an
+atomic import left **both** private list keys owned. A partial import leaves the
+missing list retryable; absent files and empty source objects cause no write and
+no completion marker. An already-complete private model requires neither a marker
+nor legacy reads, and succeeds even if stale sources are malformed. Existing marker
+keys are preserved; list ownership, rather than any marker alone, fences reimport.
+Thus a V1-only empty-source profile recovers on a later process start, while empty
+lists intentionally saved by the user cannot be resurrected from legacy storage.
+
+Malformed needed sources abort the whole attempt before publishing any list or
+marker; once both lists are owned, lower-priority files and already-owned domains
+are irrelevant. Private model validation still applies. Reads prepare an import,
+then SDK `update_store` rereads and rechecks ownership inside its atomic lane before
+merging, validating and persisting lists and the marker together. Read, parse or
+atomic-write failures leave the prior file intact and can retry on the next process
+start. Private storage is `<host-granted dataDir>/unicode-symbols/storage.json`.
+
 Preferences are supplied by the host on session open; the package keeps their
 source names/defaults so the host's ordinary replacement/preference fallback applies.
 
@@ -118,6 +156,8 @@ python3 v2/tools/verify-provenance.py
 node scripts/verify-manifest.cjs
 python3 scripts/vendor-licenses.py --check
 cargo +1.85.0 build --release --locked --target aarch64-apple-darwin
+python3 scripts/migration_process.py \
+  native-target/aarch64-apple-darwin/release/tezbar-unicode-symbols
 python3 scripts/package.py --target aarch64-apple-darwin \
   --binary native-target/aarch64-apple-darwin/release/tezbar-unicode-symbols
 python3 scripts/smoke-package.py dist/unicode-symbols-aarch64-apple-darwin.zip
@@ -141,7 +181,11 @@ its source documents. All supplied alternative license texts and SDK NOTICE ship
 `dist/` receives `<slug>-<target>.zip`, `.zip.sha256`, `.artifact.json`,
 `.executable.sha256`, and `.files.json`. No cross-target execution is simulated:
 Windows packaging must run with a real Windows executable on its build host.
-The smoke script extracts to a new directory with a minimal environment and drives
+The smoke script first runs `scripts/migration_process.py` against the extracted
+executable and packaged manifest: all six roots/two filenames, manifest-derived
+grants, fresh/V1-only profiles, ownership, all precedence ranks, absent/partial
+sources, malformed data, read/atomic-write faults and repeated process starts.
+The POSIX write-permission fault test is skipped on Windows. It then drives
 hello/initialize/open/call/dispose/shutdown, migration, Grid/List search, every
 supported action family, negative host replies, forged/stale/cross-session IDs,
 real protocol cancellation, refresh, and multi-page block results. All reverse RPC

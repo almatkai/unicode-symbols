@@ -2,6 +2,7 @@
 """Verify an extracted package through real JSONL; all desktop effects are recorded fakes."""
 import argparse, hashlib, json, os, queue, stat, subprocess, tempfile, threading, uuid, zipfile
 from pathlib import Path, PurePosixPath
+from migration_process import grants, run_suite
 
 def smoke(path):
     with tempfile.TemporaryDirectory() as temp, zipfile.ZipFile(path) as archive:
@@ -23,6 +24,7 @@ def smoke(path):
         env['PATH']=os.path.join(env.get('SystemRoot','C:/Windows'),'System32') if os.name=='nt' else '/usr/bin:/bin'
         info=json.loads(subprocess.check_output([str(binary),'--protocol-info'],cwd=root,env=env,timeout=10))
         assert info['id']==manifest['id'] and info['commands']==['index'] and info['protocol']==1 and info['version']==manifest['version']
+        run_suite(binary, manifest)
         process=subprocess.Popen([str(binary)],cwd=root,env=env,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=None)
         messages=queue.Queue(); calls=[]; sizes=[]
         def reader():
@@ -79,10 +81,12 @@ def smoke(path):
         def invoke(view,title,code=38,**kw): return call('invoke-action',{'actionId':action(view,title,code)},**kw)
         try:
             hello=receive(); assert all(hello.get(k)==v for k,v in {'type':'hello','id':manifest['id'],'version':manifest['version'],'protocol':1}.items()),hello
-            legacy=Path(temp)/'legacy.json'
+            profile=Path(temp)/'profile'
+            legacy=profile/manifest['migrationPaths']['legacyLocalStorage']
+            legacy.parent.mkdir(parents=True)
             legacy.write_text(json.dumps({'favorites-v1':json.dumps([{'c':38,'score':0.5,'isExtra':True}]),'recently-used-v2':json.dumps([{'c':65}])}))
             private=Path(temp)/'data'
-            request('initialize',{'protocol':1,'extensionId':manifest['id'],'platform':'Windows' if os.name=='nt' else 'macOS','packageDir':str(root),'dataDir':str(private),'tempDir':str(Path(temp)/'temp'),'grantedCapabilities':manifest['capabilities'],'reason':'command','migrationPaths':{'legacyLocalStorage':str(legacy)}})
+            request('initialize',{'protocol':1,'extensionId':manifest['id'],'platform':'Windows' if os.name=='nt' else 'macOS','packageDir':str(root),'dataDir':str(private),'tempDir':str(Path(temp)/'temp'),'grantedCapabilities':manifest['capabilities'],'reason':'command','migrationPaths':grants(manifest,profile)})
             view=request('session.open',{'sessionId':'zip-smoke','commandName':'index','preferences':{'primaryAction':'copy'},'argumentValues':{}}); rows(view)
             stored=private/'unicode-symbols/storage.json'
             assert json.loads(stored.read_text())['favorites-v1']==[38]

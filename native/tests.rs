@@ -166,6 +166,10 @@ async fn acknowledged_paste_is_not_replayed_after_storage_failure_and_staged_sta
     let id = action(&state, "paste");
     let payload = json!({"sessionId":"test","actionId":id});
     let storage = dir.path().join("data/unicode-symbols/storage.json");
+    // Empty-source initialization deliberately no longer creates a private file.
+    update_store(&fixture.context, process::STORE, |_| Ok(()))
+        .await
+        .unwrap();
     std::fs::remove_file(&storage).unwrap();
     std::fs::create_dir(&storage).unwrap();
     fixture.reply(Ok(json!({"ok":true,"message":"Pasted text"})));
