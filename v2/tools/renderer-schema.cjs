@@ -25,7 +25,7 @@ const React=require(path.join(npmRoot,'react')),server=require(path.join(npmRoot
 const list=require(path.join(beta,'list-runtime.tsx')),grid=require(path.join(beta,'grid-runtime.tsx')),form=require(path.join(beta,'form-runtime.tsx')),detail=require(path.join(beta,'detail-runtime.tsx'));
 for(const f of ['grid-runtime.test.ts','form-runtime.test.ts','detail-runtime.test.ts','native-v2-visuals.test.ts'])require(path.join(beta,f));
 const requests=[{preferences:{viewType:'list',gridItemSize:'small',primaryAction:'copy'},query:'arow',emitView:true},{preferences:{viewType:'grid',dataSet:'full',gridItemSize:'small'},query:'U+1F600',emitView:true}];
-const run=cp.spawnSync(path.join(root,'target/debug/examples/oracle_bridge'),[],{input:requests.map(JSON.stringify).join('\n')+'\n',encoding:'utf8',maxBuffer:30e6});assert.equal(run.status,0,run.stderr);
+const run=cp.spawnSync(path.join(process.env.CARGO_TARGET_DIR || path.join(root,'target'),'debug/examples/oracle_bridge'),[],{input:requests.map(JSON.stringify).join('\n')+'\n',encoding:'utf8',maxBuffer:30e6});assert.equal(run.status,0,run.stderr);
 const outputs=run.stdout.trim().split('\n').map(JSON.parse);let wire=0;
 for(let i=0;i<outputs.length;i++){
  const v=outputs[i].view;const root=v.root;assert.equal(root.props.__hasServerSearch,true);assert.equal(root.props.filtering,false);const rows=i===0?list.parseListRows(root):grid.collectGridItems(root);assert.ok(rows.length);assert.ok(rows[0].actionIds.length>=10);assert.ok(rows.every(r=>r.actionIds.every(id=>v.actions.some(a=>a.id===id))));
